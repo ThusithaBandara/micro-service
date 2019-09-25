@@ -22,15 +22,18 @@ public class ExchangeValue {
 	 * @param to
 	 * @param value
 	 */
+	private int port;
+	
 	public ExchangeValue() {
 		}
 	
-	public ExchangeValue(int id, String from, String to, int value) {
+	public ExchangeValue(int id, String from, String to, int value,int port) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.value = value;
+		this.port=port;
 	}
 	public int getId() {
 		return id;
@@ -55,6 +58,14 @@ public class ExchangeValue {
 	}
 	public void setValue(int value) {
 		this.value = value;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
 	}
 	
 	
