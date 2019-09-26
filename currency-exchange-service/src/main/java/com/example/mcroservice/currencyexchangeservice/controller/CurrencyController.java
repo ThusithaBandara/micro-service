@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.mcroservice.currencyexchangeservice.model.ExchangeValue;
 import com.example.mcroservice.currencyexchangeservice.service.CurrencyService;
 
+
+import ch.qos.logback.classic.Logger;
+
 @RestController
 public class CurrencyController {
+	
+	Logger logger=(Logger) org.slf4j.LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private CurrencyService currencyService;
@@ -19,6 +24,9 @@ public class CurrencyController {
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public ExchangeValue exchange(@PathVariable String from,@PathVariable String to) {
 		ExchangeValue find = currencyService.find(from,to);
+		
+		logger.info("{}",find);
+		
 		return find;
 	}
 	

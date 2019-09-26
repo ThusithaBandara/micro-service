@@ -1,6 +1,5 @@
 package com.example.mcroservice.netfixzuulapigatewayserver;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -29,15 +28,18 @@ public class NetfixZuulApiGatewayServerApplication {
 	}
 	
 	
-	@Bean
-	public Sampler defaultSampler() {
+	
+	@Bean 
+	public Sampler defaultSampler() { 
 		return new Sampler() {
-			
-			@Override
-			public boolean isSampled(long traceId) {
-				// TODO Auto-generated method stub
-				return true;
-			}
+	  
+			 @Override 
+			 public boolean isSampled(long traceId) {
+			 
+				 return true;
+			 }
 		};
+
 	}
+	 
 }
